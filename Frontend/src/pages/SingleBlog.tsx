@@ -8,15 +8,20 @@ function SingleBlog() {
      const {loading,data} = useBLog({
         id :id||""
      });
+     if( loading || !data){
   return (
     <div>
-    { loading == true? <div>loading</div> :
-    <div>
-      <FullBlog blog={data}/>
-    </div>
-    }
-    </div>
+     <div>loading</div> 
+     </div>
   )
 }
+   return <div>
+      <FullBlog blog={data}/>
+    </div>
+    
+   
+  
+}
+
 
 export default SingleBlog

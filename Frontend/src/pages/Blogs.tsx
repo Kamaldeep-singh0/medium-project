@@ -2,6 +2,8 @@ import React from 'react'
 import BlogCard from '../components/BlogCard'
 import NavBar from '../components/NavBar'
 import { useBLogs } from '../hooks'
+import BlogSkeleton from '../components/BlogSkeleton';
+
 
 function Blogs() {
   const {loading,data} = useBLogs();
@@ -11,7 +13,13 @@ function Blogs() {
     <div className="flex justify-center ">
     <div className='flex flex-col w-2/3 justify-center pt-14   '>
 
-    { loading == true? <div>loading</div> :
+    { loading == true? <div>
+           <BlogSkeleton/>
+           <BlogSkeleton/>
+           <BlogSkeleton/>
+           <BlogSkeleton/>
+           <BlogSkeleton/>
+           <BlogSkeleton/></div> :
      <div>
          {data && data.map((blog)=>(
           <BlogCard
