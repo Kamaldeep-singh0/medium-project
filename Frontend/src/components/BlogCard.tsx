@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 interface BlogCardProps{
-    id: number,
+    id: string,
     authorName:string,
     title:string,
     publishedDate:string,
@@ -33,7 +33,7 @@ export function Avatar({name,size = "small"}:{name:string, size?:"small"|"big"})
     return(
         <div className='inline-flex items-center justify-center size-[28px] rounded-full bg-yellow-500 font-semibold text-black leading-none'>
            <span className={`${size === "small" ? "text-xl" : "text-md"} `}>
-        {name[0]}
+           {name ? name[0] : 'X'}
     </span>
         </div>
     )

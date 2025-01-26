@@ -15,7 +15,7 @@ export const blogRouter = new Hono<{
 }>()
 
    blogRouter.use('/*', async (c, next) => {
-    const header = c.req.header("authorization") ||"";
+    const header = c.req.header("Authorization") ||"";
     const token = header.split(" ")[1];
     try {
     const response = await verify(token,c.env.JWT_SECRET) as { id: string };
@@ -96,7 +96,12 @@ export const blogRouter = new Hono<{
         datasourceUrl: c.env.DATABASE_URL,
         }).$extends(withAccelerate())
        try{
-        const blog = await prisma.blog.findMany();
+        const blog = await prisma.blog.findMany({
+            include: {
+                author: true
+            }
+        });
+    
     return c.json({
         blog
     })
@@ -113,11 +118,14 @@ export const blogRouter = new Hono<{
         }).$extends(withAccelerate())
         const blogId = await c.req.param("id");
            try{
-        const blog = await prisma.blog.findFirst({
-            where:{
-                id : blogId
-            }
-        })
+            const blog = await prisma.blog.findFirst({
+                where: {
+                    id: blogId
+                },
+                include: {
+                    author: true
+                }
+            });
     return c.json({
          blog
     })
