@@ -1,10 +1,12 @@
 import { SignupInput } from '@kamaldeepsingh0/medium-common';
 import axios from 'axios';
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {BACKEND_URL} from '../config'
+import { UserContext } from '../App';
 
 function Auth({type}:{type:"signin"|"signup"}) {
+   const{setUserName} = useContext(UserContext);
     const navigate = useNavigate();
   const [postInput,setPostInput] = useState<SignupInput>({
        name: "",
@@ -40,7 +42,8 @@ function Auth({type}:{type:"signin"|"signup"}) {
                 setPostInput({
                  ...postInput ,
                  name:e.target.value
-                })
+                });
+                setUserName(e.target.value);
            }} /> : null }
            
 

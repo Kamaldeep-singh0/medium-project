@@ -11,7 +11,7 @@ function Blogs() {
     <div>
        <NavBar/>
     <div className="flex justify-center ">
-    <div className='flex flex-col w-2/3 justify-center pt-14   '>
+    <div className='flex flex-col w-screen px-5 md:px-0 md:w-2/3 justify-center pt-14   '>
 
     { loading == true? <div>
            <BlogSkeleton/>
