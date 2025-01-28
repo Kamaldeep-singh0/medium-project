@@ -8,13 +8,13 @@ function FullBlog({blog}:{blog:Blog}) {
     <div>
       <NavBar/>
       <div className="flex justify-center">
-      <div className='grid grid-cols-12 px-10 w-full max-w-screen-xl pt-24  '>
-      <div className=' col-span-8 w-full '>
-        <div className='font-extrabold text-5xl break-words'>{blog.title}</div>
+      <div className='grid md:grid-cols-12 px-5 md:px-10 md:max-w-screen-lg pt-24  '>
+      <div className=' md:col-span-8 w-full '>
+        <div className='font-extrabold text-3xl break-words'>{blog.title}</div>
         <div className='mt-2 text-lg text-slate-500'>{`Posted on January 24,2005`}</div>
         <div  className='mt-4 text-lg break-words '>{blog.content}</div>
       </div>
-      <div className=' col-span-4  w-full  pl-5'>
+      <div className=' md:col-span-4  w-full  md:pl-5'>
         <div className='mt-4 text-lg '>Author</div>
         <div className=' pt-3 flex items-center'>
            <Avatar name={blog.author.name}/>
