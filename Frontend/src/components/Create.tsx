@@ -16,13 +16,13 @@ function Create() {
               setTitle(e.target.value)
             }}
             placeholder='Title...' 
-            className='text-3xl w-full font-semibold border border-gray-300 outline-none bg-gray-100 p-2 rounded'/>
+            className='text-2xl w-full font-semibold border border-gray-300 outline-none bg-gray-100 p-2 rounded'/>
            <textarea
              onChange={(e)=>{
               setDescription(e.target.value)
              }}  
              placeholder='Tell your story...' 
-             className='text-2xl pb-60  w-full font-semibold border border-gray-300 outline-none bg-gray-100 p-2 rounded mt-3 '/>
+             className='text-xl pb-60  w-full font-semibold border border-gray-300 outline-none bg-gray-100 p-2 rounded mt-3 '/>
            <button 
              onClick={async ()=>{
               const res = await axios.post(`${BACKEND_URL}/api/v1/blog/`,{

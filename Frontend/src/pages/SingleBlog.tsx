@@ -2,6 +2,7 @@
 import { useBLog } from '../hooks';
 import { useParams } from 'react-router-dom';
 import FullBlog from '../components/FullBlog';
+import Shimmer from '../components/Shimmer';
 
 function SingleBlog() {
     const { id } = useParams();
@@ -11,7 +12,7 @@ function SingleBlog() {
      if( loading || !data){
   return (
     <div>
-     <div>loading</div> 
+     <div><Shimmer/></div> 
      </div>
   )
 }
