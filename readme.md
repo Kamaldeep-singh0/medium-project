@@ -26,7 +26,7 @@ A full-stack Medium Project built with modern web technologies.
 
 1. Clone the repository:
 ```bash
-git clone <https://github.com/Kamaldeep-singh0/medium-projectl>
+git clone <https://github.com/Kamaldeep-singh0/medium-project>
 cd medium-project
 ```
 
