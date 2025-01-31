@@ -44,12 +44,16 @@ export const blogRouter = new Hono<{
                 return c.json({ error: "invalid inputs" });
             }
         const authorId = c.get("userId")
+        const currentDate = new Date();
+        const formattedDate = currentDate.toISOString().split('T')[0];
+ 
         try{
         const blog = await prisma.blog.create({
             data:{
                 title: body.title,
                 content: body.content,
-                authorId: authorId
+                authorId: authorId,
+                published: formattedDate
             }
         })
     return c.json({

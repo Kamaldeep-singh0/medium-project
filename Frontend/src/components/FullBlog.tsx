@@ -11,7 +11,7 @@ function FullBlog({blog}:{blog:Blog}) {
       <div className='grid md:grid-cols-12 px-5 md:px-10 md:max-w-screen-lg pt-24  '>
       <div className=' md:col-span-8 w-full '>
         <div className='font-extrabold text-3xl break-words'>{blog.title}</div>
-        <div className='mt-2 text-lg text-slate-500'>{`Posted on January 24,2005`}</div>
+        <div className='mt-2 text-lg text-slate-500'>{blog.published}</div>
         <div  className='mt-4 text-lg break-words '>{blog.content}</div>
       </div>
       <div className=' md:col-span-4  w-full  md:pl-5'>

@@ -27,7 +27,7 @@ function Blogs() {
                     authorName={blog.author.name}
                     title={blog.title}
                     content={blog.content}
-                    publishedDate={"2nd Feb 2024"}
+                    publishedDate={blog.published}
           />))}
       </div>
     }    

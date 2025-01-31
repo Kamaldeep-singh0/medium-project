@@ -6,6 +6,7 @@ export interface Blog {
     title : string,
     content : string,
     id : string,
+    published : string,
     author: {
         name: string
     }
@@ -41,8 +42,7 @@ export function useBLogs (){
 
    useEffect( ()=>{
   
-    console.log(localStorage.getItem("token"))
-
+    
      axios.get(`${BACKEND_URL}/api/v1/blog/bulk`,{
         headers:{
             Authorization : `Bearer ${localStorage.getItem("token")}`
